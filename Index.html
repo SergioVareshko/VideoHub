@@ -42,6 +42,20 @@
         <li><a href="#">Library</a></li>
         <li class="active">Data</li>
       </ol>
+      <button type="button" id="comedy-btn" data-loading-text="Loading..." class="btn btn-primary">
+        Коммедии
+      </button>
+      <button type="button" id="mylt-btn" data-loading-text="Loading..." class="btn btn-primary">
+        Мультфильми
+      </button>
+      <script>
+        $('#comedy-btn').click(function () {
+          var btn = $(this)
+          btn.button('loading')
+          console.log('comedy');
+          btn.button('reset')
+        });
+    </script>
       <div id="carousel" class="carousel slide" data-ride="carousel">
             <!-- Индикаторы -->
         <ol class="carousel-indicators">

@@ -17,12 +17,12 @@ var filmInfo = {
     "isComingSoon": true,
     "isScheduledAtCinema": false,
     "titleAlt": "Поліна і таємниця кіностудії",
-    "ratingAlt": "0+",
+    "ratingAlt": "0",
     "ratingDescriptionAlt": "",
     "synopsisAlt": "Україна, Франція, Бельгія",
     "shortSynopsisAlt": "Wild Tribe Films, Kinorob",
     "websiteUrl": "",
-    "genreId": "0000000002",
+    "genreId": "0000000001",
     "eDICode": null,
     "twitterTag": "українська",
     "titleTranslations": [],
@@ -34,14 +34,14 @@ var filmInfo = {
      "averageScore": null
     },
     "customerRatingTrailerStatistics": {
-     "ratingCount": 0,
+     "ratingCount": 1,
      "ratingCountLiked": 0
     },
     "filmWebId": ""
    }
 
    var filmInfo1 = {
-    "ID": "HO00000241",
+    "ID": "HO00000243",
     "shortCode": "",
     "title": "ПОЛІНА І ТАЄМНИЦЯ КІНОСТУДІЇ",
     "rating": "0+",
@@ -59,7 +59,7 @@ var filmInfo = {
     "isComingSoon": true,
     "isScheduledAtCinema": false,
     "titleAlt": "Поліна і таємниця кіностудії",
-    "ratingAlt": "0+",
+    "ratingAlt": "1",
     "ratingDescriptionAlt": "",
     "synopsisAlt": "Україна, Франція, Бельгія",
     "shortSynopsisAlt": "Wild Tribe Films, Kinorob",
@@ -76,14 +76,14 @@ var filmInfo = {
      "averageScore": null
     },
     "customerRatingTrailerStatistics": {
-     "ratingCount": 0,
+     "ratingCount": 2,
      "ratingCountLiked": 0
     },
     "filmWebId": ""
    }
 
    var filmInfo2 = {
-    "ID": "HO00000241",
+    "ID": "HO00000242",
     "shortCode": "",
     "title": "ПОЛІНА І ТАЄМНИЦЯ КІНОСТУДІЇ",
     "rating": "0+",
@@ -118,7 +118,7 @@ var filmInfo = {
      "averageScore": null
     },
     "customerRatingTrailerStatistics": {
-     "ratingCount": 0,
+     "ratingCount": 3,
      "ratingCountLiked": 0
     },
     "filmWebId": ""
@@ -146,25 +146,87 @@ function Movie(options) {
     this.genreId = options.genreId;
     this.twitterTag = options.twitterTag;
     this.customerRatingStatistics= options.customerRatingStatistics;
+    this.customerRatingTrailerStatistics = options.customerRatingTrailerStatistics;
+}
+
+Movie.prototype = {
+    getcustomerRatingStatistics: function () {
+        return  options.customerRatingStatistics;
+    },
+
+    editData:  function (data) {
+        for (var prop in data)  {
+            this[prop] = data[prop]
+        }
+        return this;
+    },
+
+    deleteData : function (data) {
+        for (var prop in data)  {
+            this[prop] = null
+        }
+        return this;
+    }
 }
 
 function MovieList(arr) {
     var IsArray = arr instanceof Array;
-    this.result = [];
+    this.movies = [];
     if (!IsArray) {
         return;
     }
+    //переписать на мап
     for  (i =0; i < arr.length; i++){
         var item = new Movie(arr[i]);
-        this.result.push(item);
+        this.movies.push(item);
     }
 }
 
-var FilmOne = new Movie(filmInfo);
+MovieList.prototype = {
+    findItemById : function (Id) {
+        let movie = this.movies.find(item => item.ID == Id);
+        return movie; 
+        
+    },
+    getItemsByGanre :  function(ganreId) {
+        let movies = this.movies.filter(item => item.genreId === ganreId) ;
+        return movies;
+    },
+
+    deleteItemById : function (Id) {
+        let deleteitem = this.findItemById(Id);
+        let newarr = this.movies.filter(item => item != deleteitem);
+        return newarr;
+    },
+
+    editItems : function (Id, data){
+        let item = this.findItemById(Id);
+        if (item) {
+            for (var prop in data)  {
+                item[prop] = data[prop]
+            }
+        }
+        return item;
+    },
+
+    addItem : function(data) {
+        let newItem = new Movie(data);
+        this.movies.push(newItem);
+        return this.movies;
+    }
+}
+
+var filmOne = new Movie(filmInfo);
+var editFilm = filmOne.editData({"rating": '4'});
 
 var arrOfFillm = [filmInfo, filmInfo1, filmInfo2];
 
-var Films = new MovieList(arrOfFillm);
+var films = new MovieList(arrOfFillm);
+var editFilm = films.editItems('HO00000242', {"shortCode" : 22})
+var newFilm = {"ID" : '22',
+                "Title": 'Ninja'}
+var newcollectionOfFilms = films.addItem(newFilm);
 
-console.log(FilmOne.ID);
-console.log(FilmOne.customerRatingStatistics.ratingCount)
+var collectionWithOutComedy = films.deleteItemById('22');
+//var comedy = films.getItemsByGanre('0000000002');
+

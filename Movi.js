@@ -1,26 +1,85 @@
-function Movie(options) {
-    this.name = options.name;
-    this.title = options.title;
-    this.janre = options.janre;
-    this.rank = options.rank;
-    this.getFilmRunkByUser  = function() {
-        if (this.janre.includes("horror")) {
-            this.isHorror = true
-        } else {
-            this.isHorror = false
-        }
+
+/*function BaseObject (name, secondname ) {
+    this.name = name
+    this.secondname = secondname
+    this.megoconst = 22;
+} 
+
+BaseObject.prototype.getFullName = function() {
+    return this.name + this.secondname;
+}
+BaseObject.prototype.getMegoConst = function() {
+    return this.megoconst;
+}
+
+function Childuser (name, secondn) {
+    BaseObject.apply(this, arguments);
+}
+
+Childuser.prototype = Object.create(BaseObject.prototype);
+Childuser.prototype.constructor = Childuser; 
+
+function Admin (name) {
+    this.name = name;
+    this.salary = 3000;
+}
+
+function Arhitector(name) {
+    BaseObject.apply(this, arguments);
+}
+
+var serg = new Childuser("Serg");
+var vanya = new Arhitector("Vanya");
+console.log(serg.getMegoConst());*/
+
+/*function showThis(){
+    console.log(this);
+}
+
+showThis();
+var user = {
+    name :'Max',
+    getName: function() {
+        return this.name;
     }
 }
 
-var film1 = new Movie({
-    name: "Film1",
-    title: "Mogogo",
-    janre:"horror3",
-    rank: 1
-});
+var user2 = {
+    name:'Dima'
+}
 
-film1.getFilmRunkByUser();
+console.log(user.getName());
+console.log(user.getName.call(user2));*/
 
-console.log(film1.name);
-console.log(film1.isHorror);
-//alert(film1.isHorror);
+/*function createGetFn(url) {
+    return function () {
+        return ['data', 'from', 'server'];
+    }
+}
+
+var getMovies = createGetFn('/moviess' );
+console.log(getMovies());*/
+
+function bind(fn, context) {
+    //Реализовать
+  //  var newfn = fn.apply(context, arguments);
+    //return newfn;
+    return function (message, context) {
+        //this = context;
+        return fn.call(context,message);
+    } 
+  }
+  
+  
+  function getName(message) {
+    return message + this.name;
+  }
+  
+  var user = {
+    name: 'Dima',
+  }
+  
+  var fn = bind(getName, user);
+   console.log(fn('Hello ', user));
+  
+  // Hello Dima
