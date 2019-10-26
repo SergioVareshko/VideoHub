@@ -64,9 +64,9 @@ function bind(fn, context) {
     //Реализовать
   //  var newfn = fn.apply(context, arguments);
     //return newfn;
-    return function (message, context) {
+    return function (message) {
         //this = context;
-        return fn.call(context,message);
+        return fn.call(context, message);
     } 
   }
   
@@ -80,6 +80,41 @@ function bind(fn, context) {
   }
   
   var fn = bind(getName, user);
-   console.log(fn('Hello ', user));
+   console.log(fn('Hello '));
   
   // Hello Dima
+
+   /* var header = document.querySelector('.header');
+
+    var headers = document.querySelectorAll('.header');
+    console.log(header);
+    console.log(headers);
+
+    var menu = document.querySelector('.menu');
+    console.log(menu.closest('.phone'))*/
+
+    /*var link  = document.querySelector('a');
+    console.log(link.getAttribute('href'));
+    link.setAttribute('href', 'newUrl');
+    console.log(link.getAttribute('href')) 
+    setTimeout(() => {
+        link.classList.remove('hidden');
+        console.log(link.classList.contains('hidden'));
+        link.classList.toggle('hidden');
+        console.log(link.classList.contains('hidden'));
+    }, 5000);*/
+
+    /*var names = ['Ira', 'Masha', 'Nastya'];
+    let ul = document.querySelector('ul')
+    for (i = 0; i< names.length; i++) {
+        let ulItem = document.createElement('li');
+        ulItem.textContent = names[i];
+        ul.appendChild(ulItem);
+    }
+    names.forEach(element => {
+        let ulItem = document.createElement('li');
+        ulItem.textContent = element;
+        ulItem.setAttribute('class', 'li');
+        ul.appendChild(ulItem);
+    });*/
+

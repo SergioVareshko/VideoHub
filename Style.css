@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+}
+html,
+body {
+	height: 100%;
+}
+/*body
+{
+	background-image: url("../img/93d8ef315c338c65e172390733bed6ca.jpg") ;
+}*/
+.wrapper {
+	position: relative;
+	min-height: 100%;
+}
+main
+{
+	padding-bottom: 90px;
+}
+#myInput
+{
+	max-width: 100%;
+	height: 30px;
+	font-size: 14px;
+	display:block;
+	padding:12px 0px 12px 20px;
+	border: 1px solid black;
+	border-radius: 10px 10px 10px 10px;
+	margin-top:10px;
+}
+.film-container img
+{
+	height: 256px;
+	width: 160px;
+	min-width:100%;
+}
+
+.row.film-showing
+{
+	margin-top:20px;
+}
+.container.film-showing
+{
+	margin-top:50px;
+	margin-bottom:100px;
+}
+.col-1 h1
+{
+	color:#fff;
+	width:300px;
+
+}
+span
+{
+	display:block;
+	min-width: 100%;
+	color:#fff;
+}
+header
+{
+	/*background-image: url("../img/gradient-fon-grafika-fioletovyi-geometriia-abstraktsiia.jpg");*/
+	height: auto;
+}
+#main-logo
+{
+	position: relative;
+	right:15px;
+	height: 80px;
+	width: 	90px;
+}
+.container-header
+{
+	margin-left:0;
+}
+.main-links
+{
+	padding:20px;
+	max-width:100%;
+}
+
+.main-links a 
+{
+	color:#fff;
+	font-family: 'Roboto Mono', monospace;
+	font-size:25px;
+}
+.row.header
+{
+	margin:0;
+}
+.search
+{
+	padding-top:15px;
+}
+a:link
+{
+	color:#fff;
+}
+a:visited
+{
+	color:#fff;
+}
+footer
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	/*background-image:url("../img/gradient-fon-grafika-fioletovyi-geometriia-abstraktsiia.jpg");*/
+}
+
+.col-footer
+{
+	padding:20px 0px 0px 150px;
+}
+
+.col-footer i
+{
+  font-size:40px;
+}
+
+.footer-icon
+{
+	color:#fff;
+}
+
+
+
+
+.list {
+    display: inline;
+    position: relative;
+    background-color: brown;
+}
+.li {
+    background-color: chartreuse;
+}

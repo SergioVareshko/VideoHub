@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Самый лутший сайтец</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>No IVI site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="images/7339-modify-your-logo.gif">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style.css">
+  <title>Самый лутший сайтец</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="Style.css">;
   </head>
   <body>
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
-    <script src="Movi.js"></script>
-    <h1> <align="center"> Hello, Serg!</h1> 
-    
-    
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-              <img alt="Brand" src="img/Schedule.jpg" height="20" width="20">
-            </a>
-          </div>
-          <form class="navbar-form navbar-left" role="search">
-            
-        <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+      <div class="wrapper">
+        <header>
+          
+          <div class="container-header">
+            <div class="row header">
+              <div class="col-1">
+                <img src="img/Schedule.jpg" alt="" id = "main-logo">
+              </div>
+              <div class="col-2 main-links"><a href="">Фильмы</a></div>
+              <div class="col-2 main-links"><a href="">Сериалы</a></div>
+              <div class="col-2 main-links"><a href="">Трейлеры</a></div>
+              <div class="col-2 main-links"><a href="">Кино</a></div>
+              <div class="col-3 search">
+                <input type="text" onkeyup="filter()" id="myInput" placeholder="Search">		
+              </div>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-        </div>
-      </nav>
-    
+        </header>
+
     <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><a href="#">Library</a></li>
@@ -56,93 +56,169 @@
           btn.button('reset')
         });
     </script>
-      <div id="carousel" class="carousel slide" data-ride="carousel">
-            <!-- Индикаторы -->
-        <ol class="carousel-indicators">
-                <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel" data-slide-to="1"></li>
-                <li data-target="#carousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="item active">
-                <img src="img/Schedule.jpg" height="170" width="170" alt="Some">
-              </div>
-              <div class="item">
-                    <img src="img/Schedule.jpg" height="170" width="170" alt="Some">
-              </div>
-              <div class="item">
-                <img src="img/Schedule.jpg" height="170" width="170" alt="Some">
-              </div>
-            </div>
-            <!-- Элементы управления -->
-            <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Предыдущий</span>
-            </a>
-            <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Следующий</span>
-            </a>
-          </div>
+<div class="container film-showing">
+  <div class="row">
+    <div class="col-1">
+    <h1>Обязательно к просмотру</h1>
+    </div>
+  </div>
+  <div class="row film-showing">
+    <!-- <div class="col-2 test">
+      <div class="film-container">
+      <img src="http://baskino.me/uploads/images/2015/981/flii329.jpg" alt="kobain-heck-montage">
+      <a href="#"><span class="film-name">Кобейн чёртов монтаж</span></a>
+      </div>
+    </div> -->
+  </div>
+</div>      
+          
+<script src="main.js"></script>
+<script src="Movi.js"></script>
+<script src="models/Movie.js"></script>
+	<script src="models/MovieList.js"></script>
+	<script src="models/MovieView.js"></script>
+	<script src="models/MovieListView.js"></script>
+	<script>
 
+//     var movie1 = new Movie(1,"Кобейн чёртов монтаж","fdsfdsfds","Triller",0,5.0);
+  //   var movie2 = new Movie(2,"Гарри Поттер","fdsfdsfds","Fantastic",0,5.0);
+	//	 var movie3 = new Movie(3,"Король лев","fdsfdsfds","Fantastic",0,5.0);
+  var filmInfo = {
+    "ID": "3",
+    "shortCode": "",
+    "title": "Короли Лев",
+    "rating": "0+",
+    "ratingDescription": "",
+    "synopsis": "Одинадцятирічна дівчинка Поліна ніколи не бачила своїх батьків. Вона нічого не знає про своє минуле та повинна жити не з найкращого тітонькою та двоюрідним братом. Це єдині рідні люди, які у неї є. Тільки ось вони багато приховують від дівчинки – наприклад, те, що в неї є магічні здібності. Або те, що вони хочуть від Поліни незабаром позбутися, щоб отримати чарівну кіностудію \"Сінема\". Чим же вона така особлива? А тим, що через неї можна потрапити до зовсім іншого світу – чарівного світу кіно, де живуть усі персонажі. Саме туди незабаром і потрапить Поліна, там вона зможе дізнатися історію її батьків. Потрібно вірити в диво, адже воно навколо нас.",
+    "shortSynopsis": "",
+    "HOFilmCode": "F000000292",
+    "CorporateFilmId": "",
+    "runTime": 95,
+    "openingDate": "2019-08-22T00:00:00",
+    "graphicUrl": "",
+    "filmNameUrl": "2019",
+    "trailerUrl": "https://youtu.be/TunAEgogHNk",
+    "additionalUrls": [],
+    "isComingSoon": true,
+    "isScheduledAtCinema": false,
+    "titleAlt": "Поліна і таємниця кіностудії",
+    "ratingAlt": "0",
+    "ratingDescriptionAlt": "",
+    "synopsisAlt": "Україна, Франція, Бельгія",
+    "shortSynopsisAlt": "Wild Tribe Films, Kinorob",
+    "websiteUrl": "",
+    "genreId": "0000000001",
+    "eDICode": null,
+    "twitterTag": "українська",
+    "titleTranslations": [],
+    "synopsisTranslations": [],
+    "shortSynopsisTranslations": [],
+    "ratingDescriptionTranslations": [],
+    "customerRatingStatistics": {
+     "ratingCount": 0,
+     "averageScore": null
+    },
+    "customerRatingTrailerStatistics": {
+     "ratingCount": 1,
+     "ratingCountLiked": 0
+    },
+    "filmWebId": ""
+   }
 
+   var filmInfo1 = {
+    "ID": "1",
+    "shortCode": "",
+    "title": "Гарри Поттер",
+    "rating": "0+",
+    "ratingDescription": "",
+    "synopsis": "Одинадцятирічна дівчинка Поліна ніколи не бачила своїх батьків. Вона нічого не знає про своє минуле та повинна жити не з найкращого тітонькою та двоюрідним братом. Це єдині рідні люди, які у неї є. Тільки ось вони багато приховують від дівчинки – наприклад, те, що в неї є магічні здібності. Або те, що вони хочуть від Поліни незабаром позбутися, щоб отримати чарівну кіностудію \"Сінема\". Чим же вона така особлива? А тим, що через неї можна потрапити до зовсім іншого світу – чарівного світу кіно, де живуть усі персонажі. Саме туди незабаром і потрапить Поліна, там вона зможе дізнатися історію її батьків. Потрібно вірити в диво, адже воно навколо нас.",
+    "shortSynopsis": "",
+    "HOFilmCode": "F000000292",
+    "CorporateFilmId": "",
+    "runTime": 95,
+    "openingDate": "2019-08-22T00:00:00",
+    "graphicUrl": "",
+    "filmNameUrl": "2019",
+    "trailerUrl": "https://youtu.be/TunAEgogHNk",
+    "additionalUrls": [],
+    "isComingSoon": true,
+    "isScheduledAtCinema": false,
+    "titleAlt": "Поліна і таємниця кіностудії",
+    "ratingAlt": "1",
+    "ratingDescriptionAlt": "",
+    "synopsisAlt": "Україна, Франція, Бельгія",
+    "shortSynopsisAlt": "Wild Tribe Films, Kinorob",
+    "websiteUrl": "",
+    "genreId": "0000000002",
+    "eDICode": null,
+    "twitterTag": "українська",
+    "titleTranslations": [],
+    "synopsisTranslations": [],
+    "shortSynopsisTranslations": [],
+    "ratingDescriptionTranslations": [],
+    "customerRatingStatistics": {
+     "ratingCount": 0,
+     "averageScore": null
+    },
+    "customerRatingTrailerStatistics": {
+     "ratingCount": 2,
+     "ratingCountLiked": 0
+    },
+    "filmWebId": ""
+   }
 
+   var filmInfo2 = {
+    "ID": "2",
+    "shortCode": "",
+    "title": "ПОЛІНА І ТАЄМНИЦЯ КІНОСТУДІЇ",
+    "rating": "0+",
+    "ratingDescription": "",
+    "synopsis": "Одинадцятирічна дівчинка Поліна ніколи не бачила своїх батьків. Вона нічого не знає про своє минуле та повинна жити не з найкращого тітонькою та двоюрідним братом. Це єдині рідні люди, які у неї є. Тільки ось вони багато приховують від дівчинки – наприклад, те, що в неї є магічні здібності. Або те, що вони хочуть від Поліни незабаром позбутися, щоб отримати чарівну кіностудію \"Сінема\". Чим же вона така особлива? А тим, що через неї можна потрапити до зовсім іншого світу – чарівного світу кіно, де живуть усі персонажі. Саме туди незабаром і потрапить Поліна, там вона зможе дізнатися історію її батьків. Потрібно вірити в диво, адже воно навколо нас.",
+    "shortSynopsis": "",
+    "HOFilmCode": "F000000292",
+    "CorporateFilmId": "",
+    "runTime": 95,
+    "openingDate": "2019-08-22T00:00:00",
+    "graphicUrl": "",
+    "filmNameUrl": "2019",
+    "trailerUrl": "https://youtu.be/TunAEgogHNk",
+    "additionalUrls": [],
+    "isComingSoon": true,
+    "isScheduledAtCinema": false,
+    "titleAlt": "Поліна і таємниця кіностудії",
+    "ratingAlt": "0+",
+    "ratingDescriptionAlt": "",
+    "synopsisAlt": "Україна, Франція, Бельгія",
+    "shortSynopsisAlt": "Wild Tribe Films, Kinorob",
+    "websiteUrl": "",
+    "genreId": "0000000002",
+    "eDICode": null,
+    "twitterTag": "українська",
+    "titleTranslations": [],
+    "synopsisTranslations": [],
+    "shortSynopsisTranslations": [],
+    "ratingDescriptionTranslations": [],
+    "customerRatingStatistics": {
+     "ratingCount": 0,
+     "averageScore": null
+    },
+    "customerRatingTrailerStatistics": {
+     "ratingCount": 3,
+     "ratingCountLiked": 0
+    },
+    "filmWebId": ""
+   }
 
+   var filmOne = new Movie(filmInfo);
+   var arrOfFillm = [filmInfo, filmInfo1, filmInfo2]; 
+   var films = new MovieList(arrOfFillm);
+    
+		//var tempArr = movieList.sortByGenre("Triller");
+		var rowFilmShowing = document.querySelector(".row.film-showing");
+		var movieListView = new MovieListView(films);
+    movieListView.renderAll(rowFilmShowing);
+    //movieListView.renderItemById("1", rowFilmShowing);
 
-
-
-
-      <!-- Footer -->
-
-
-
-<footer class="page-footer font-small teal pt-4">
-
-        <!-- Footer Text -->
-        <div class="container-fluid text-center text-md-left">
-      
-          <!-- Grid row -->
-          <div class="row">
-      
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3">
-      
-              <!-- Content -->
-              <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
-                repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
-                harum esse fugiat. Itaque, culpa?</p>
-      
-            </div>
-            <!-- Grid column -->
-      
-            <!--<hr class="clearfix w-100 d-md-none pb-3">-->
-      
-            <!-- Grid column -->
-            <div class="col-md-6 mb-md-0 mb-3">
-      
-              <!-- Content -->
-              <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
-                commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
-                excepturi hic.</p>
-      
-            </div>
-            <!-- Grid column -->
-      
-          </div>
-          <!-- Grid row -->
-      
-        </div>
-        <!-- Footer Text -->
-      
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-          <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-      
-      </footer>
-      <!-- Footer -->
+	</script>
   </body>
 </html>

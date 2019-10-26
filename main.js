@@ -125,98 +125,9 @@ var filmInfo = {
    }
 
 
-function Movie(options) {
-    this.ID = options.ID;
-    this.shortCode = options.shortCode;
-    this.title = options.title;
-    this.rating = options.rating;
-    this.synopsis = options.synopsis;
-    this.shortSynopsis = options.shortSynopsis;
-    this.HOFilmCode = options.HOFilmCode;
-    this.runTime = options.runTime;
-    this.openingDate = options.openingDate;
-    this.graphicUrl = options.graphicUrl;
-    this.filmNameUrl = options.filmNameUrl;
-    this.trailerUrl = options.trailerUrl;
-    this.isComingSoon = options.isComingSoon;
-    this.isScheduledAtCinema = options.isScheduledAtCinema;
-    this.titleAlt = options.titleAlt;
-    this.ratingAlt = options.ratingAlt;
-    this.synopsisAlt = options.synopsisAlt;
-    this.genreId = options.genreId;
-    this.twitterTag = options.twitterTag;
-    this.customerRatingStatistics= options.customerRatingStatistics;
-    this.customerRatingTrailerStatistics = options.customerRatingTrailerStatistics;
-}
 
-Movie.prototype = {
-    getcustomerRatingStatistics: function () {
-        return  options.customerRatingStatistics;
-    },
 
-    editData:  function (data) {
-        for (var prop in data)  {
-            this[prop] = data[prop]
-        }
-        return this;
-    },
-
-    deleteData : function (data) {
-        for (var prop in data)  {
-            this[prop] = null
-        }
-        return this;
-    }
-}
-
-function MovieList(arr) {
-    var IsArray = arr instanceof Array;
-    this.movies = [];
-    if (!IsArray) {
-        return;
-    }
-    //переписать на мап
-    for  (i =0; i < arr.length; i++){
-        var item = new Movie(arr[i]);
-        this.movies.push(item);
-    }
-}
-
-MovieList.prototype = {
-    findItemById : function (Id) {
-        let movie = this.movies.find(item => item.ID == Id);
-        return movie; 
-        
-    },
-    getItemsByGanre :  function(ganreId) {
-        let movies = this.movies.filter(item => item.genreId === ganreId) ;
-        return movies;
-    },
-
-    deleteItemById : function (Id) {
-        let deleteitem = this.findItemById(Id);
-        let newarr = this.movies.filter(item => item != deleteitem);
-        return newarr;
-    },
-
-    editItems : function (Id, data){
-        let item = this.findItemById(Id);
-        if (item) {
-            for (var prop in data)  {
-                item[prop] = data[prop]
-            }
-        }
-        return item;
-    },
-
-    addItem : function(data) {
-        let newItem = new Movie(data);
-        this.movies.push(newItem);
-        return this.movies;
-    }
-}
-
-var filmOne = new Movie(filmInfo);
+/*var filmOne = new Movie(filmInfo);
 var editFilm = filmOne.editData({"rating": '4'});
 
 var arrOfFillm = [filmInfo, filmInfo1, filmInfo2];
@@ -227,6 +138,6 @@ var newFilm = {"ID" : '22',
                 "Title": 'Ninja'}
 var newcollectionOfFilms = films.addItem(newFilm);
 
-var collectionWithOutComedy = films.deleteItemById('22');
+var collectionWithOutComedy = films.deleteItemById('22');*/
 //var comedy = films.getItemsByGanre('0000000002');
 
