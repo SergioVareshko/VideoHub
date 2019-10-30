@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');*/
 * {
 	margin: 0;
 	padding: 0;
@@ -7,10 +7,10 @@ html,
 body {
 	height: 100%;
 }
-/*body
+body
 {
-	background-image: url("../img/93d8ef315c338c65e172390733bed6ca.jpg") ;
-}*/
+	background-image: url("G:\\Itea\\VideoHub\\img\/flover.jpg") ;
+}
 .wrapper {
 	position: relative;
 	min-height: 100%;
@@ -56,11 +56,11 @@ span
 {
 	display:block;
 	min-width: 100%;
-	color:#fff;
+	color:rgb(58, 130, 148);
 }
 header
 {
-	/*background-image: url("../img/gradient-fon-grafika-fioletovyi-geometriia-abstraktsiia.jpg");*/
+	background-image: url("G:\\Itea\\VideoHub\\img\/gradient-fon-grafika-fioletovyi-geometriia-abstraktsiia.jpg");
 	height: auto;
 }
 #main-logo
@@ -109,7 +109,7 @@ footer
 	bottom: 0;
 	width: 100%;
 	height: 100px;
-	/*background-image:url("../img/gradient-fon-grafika-fioletovyi-geometriia-abstraktsiia.jpg");*/
+	background-image:url("../img/gradient-fon-grafika-fioletovyi-geometriia-abstraktsiia.jpg");
 }
 
 .col-footer

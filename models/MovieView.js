@@ -12,9 +12,10 @@ MovieView.prototype = {
     var div = document.createElement("div");
     div.classList.add("film-container")
     var img = document.createElement("img");
-    img.setAttribute("src","img/"+movie.getId()+".jpg");
+    img.setAttribute("src","img/"+ movie.getId()+".jpg");
+    img.setAttribute("href", "G:/Itea/VideoHub/DetailPage.html");
     var a = document.createElement("a");
-    a.setAttribute("href","#");
+    a.setAttribute("href",`G:/Itea/VideoHub/DetailPage.html?id=${movie.getId()}`);
     var span = document.createElement("span");
     span.textContent=movie.getName();
     span.classList.add("film-name");

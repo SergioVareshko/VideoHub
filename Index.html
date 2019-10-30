@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>No IVI site</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
     <link rel="shortcut icon" href="images/7339-modify-your-logo.gif">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="Style.css">
-  <title>Самый лутший сайтец</title>
+  <title>VideoHub</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">  
@@ -77,148 +76,24 @@
 <script src="models/Movie.js"></script>
 	<script src="models/MovieList.js"></script>
 	<script src="models/MovieView.js"></script>
-	<script src="models/MovieListView.js"></script>
+  <script src="models/MovieListView.js"></script>
+  <script src="models/Data.js"></script>
 	<script>
 
-//     var movie1 = new Movie(1,"Кобейн чёртов монтаж","fdsfdsfds","Triller",0,5.0);
-  //   var movie2 = new Movie(2,"Гарри Поттер","fdsfdsfds","Fantastic",0,5.0);
-	//	 var movie3 = new Movie(3,"Король лев","fdsfdsfds","Fantastic",0,5.0);
-  var filmInfo = {
-    "ID": "3",
-    "shortCode": "",
-    "title": "Короли Лев",
-    "rating": "0+",
-    "ratingDescription": "",
-    "synopsis": "Одинадцятирічна дівчинка Поліна ніколи не бачила своїх батьків. Вона нічого не знає про своє минуле та повинна жити не з найкращого тітонькою та двоюрідним братом. Це єдині рідні люди, які у неї є. Тільки ось вони багато приховують від дівчинки – наприклад, те, що в неї є магічні здібності. Або те, що вони хочуть від Поліни незабаром позбутися, щоб отримати чарівну кіностудію \"Сінема\". Чим же вона така особлива? А тим, що через неї можна потрапити до зовсім іншого світу – чарівного світу кіно, де живуть усі персонажі. Саме туди незабаром і потрапить Поліна, там вона зможе дізнатися історію її батьків. Потрібно вірити в диво, адже воно навколо нас.",
-    "shortSynopsis": "",
-    "HOFilmCode": "F000000292",
-    "CorporateFilmId": "",
-    "runTime": 95,
-    "openingDate": "2019-08-22T00:00:00",
-    "graphicUrl": "",
-    "filmNameUrl": "2019",
-    "trailerUrl": "https://youtu.be/TunAEgogHNk",
-    "additionalUrls": [],
-    "isComingSoon": true,
-    "isScheduledAtCinema": false,
-    "titleAlt": "Поліна і таємниця кіностудії",
-    "ratingAlt": "0",
-    "ratingDescriptionAlt": "",
-    "synopsisAlt": "Україна, Франція, Бельгія",
-    "shortSynopsisAlt": "Wild Tribe Films, Kinorob",
-    "websiteUrl": "",
-    "genreId": "0000000001",
-    "eDICode": null,
-    "twitterTag": "українська",
-    "titleTranslations": [],
-    "synopsisTranslations": [],
-    "shortSynopsisTranslations": [],
-    "ratingDescriptionTranslations": [],
-    "customerRatingStatistics": {
-     "ratingCount": 0,
-     "averageScore": null
-    },
-    "customerRatingTrailerStatistics": {
-     "ratingCount": 1,
-     "ratingCountLiked": 0
-    },
-    "filmWebId": ""
-   }
 
-   var filmInfo1 = {
-    "ID": "1",
-    "shortCode": "",
-    "title": "Гарри Поттер",
-    "rating": "0+",
-    "ratingDescription": "",
-    "synopsis": "Одинадцятирічна дівчинка Поліна ніколи не бачила своїх батьків. Вона нічого не знає про своє минуле та повинна жити не з найкращого тітонькою та двоюрідним братом. Це єдині рідні люди, які у неї є. Тільки ось вони багато приховують від дівчинки – наприклад, те, що в неї є магічні здібності. Або те, що вони хочуть від Поліни незабаром позбутися, щоб отримати чарівну кіностудію \"Сінема\". Чим же вона така особлива? А тим, що через неї можна потрапити до зовсім іншого світу – чарівного світу кіно, де живуть усі персонажі. Саме туди незабаром і потрапить Поліна, там вона зможе дізнатися історію її батьків. Потрібно вірити в диво, адже воно навколо нас.",
-    "shortSynopsis": "",
-    "HOFilmCode": "F000000292",
-    "CorporateFilmId": "",
-    "runTime": 95,
-    "openingDate": "2019-08-22T00:00:00",
-    "graphicUrl": "",
-    "filmNameUrl": "2019",
-    "trailerUrl": "https://youtu.be/TunAEgogHNk",
-    "additionalUrls": [],
-    "isComingSoon": true,
-    "isScheduledAtCinema": false,
-    "titleAlt": "Поліна і таємниця кіностудії",
-    "ratingAlt": "1",
-    "ratingDescriptionAlt": "",
-    "synopsisAlt": "Україна, Франція, Бельгія",
-    "shortSynopsisAlt": "Wild Tribe Films, Kinorob",
-    "websiteUrl": "",
-    "genreId": "0000000002",
-    "eDICode": null,
-    "twitterTag": "українська",
-    "titleTranslations": [],
-    "synopsisTranslations": [],
-    "shortSynopsisTranslations": [],
-    "ratingDescriptionTranslations": [],
-    "customerRatingStatistics": {
-     "ratingCount": 0,
-     "averageScore": null
-    },
-    "customerRatingTrailerStatistics": {
-     "ratingCount": 2,
-     "ratingCountLiked": 0
-    },
-    "filmWebId": ""
-   }
 
-   var filmInfo2 = {
-    "ID": "2",
-    "shortCode": "",
-    "title": "ПОЛІНА І ТАЄМНИЦЯ КІНОСТУДІЇ",
-    "rating": "0+",
-    "ratingDescription": "",
-    "synopsis": "Одинадцятирічна дівчинка Поліна ніколи не бачила своїх батьків. Вона нічого не знає про своє минуле та повинна жити не з найкращого тітонькою та двоюрідним братом. Це єдині рідні люди, які у неї є. Тільки ось вони багато приховують від дівчинки – наприклад, те, що в неї є магічні здібності. Або те, що вони хочуть від Поліни незабаром позбутися, щоб отримати чарівну кіностудію \"Сінема\". Чим же вона така особлива? А тим, що через неї можна потрапити до зовсім іншого світу – чарівного світу кіно, де живуть усі персонажі. Саме туди незабаром і потрапить Поліна, там вона зможе дізнатися історію її батьків. Потрібно вірити в диво, адже воно навколо нас.",
-    "shortSynopsis": "",
-    "HOFilmCode": "F000000292",
-    "CorporateFilmId": "",
-    "runTime": 95,
-    "openingDate": "2019-08-22T00:00:00",
-    "graphicUrl": "",
-    "filmNameUrl": "2019",
-    "trailerUrl": "https://youtu.be/TunAEgogHNk",
-    "additionalUrls": [],
-    "isComingSoon": true,
-    "isScheduledAtCinema": false,
-    "titleAlt": "Поліна і таємниця кіностудії",
-    "ratingAlt": "0+",
-    "ratingDescriptionAlt": "",
-    "synopsisAlt": "Україна, Франція, Бельгія",
-    "shortSynopsisAlt": "Wild Tribe Films, Kinorob",
-    "websiteUrl": "",
-    "genreId": "0000000002",
-    "eDICode": null,
-    "twitterTag": "українська",
-    "titleTranslations": [],
-    "synopsisTranslations": [],
-    "shortSynopsisTranslations": [],
-    "ratingDescriptionTranslations": [],
-    "customerRatingStatistics": {
-     "ratingCount": 0,
-     "averageScore": null
-    },
-    "customerRatingTrailerStatistics": {
-     "ratingCount": 3,
-     "ratingCountLiked": 0
-    },
-    "filmWebId": ""
-   }
-
-   var filmOne = new Movie(filmInfo);
-   var arrOfFillm = [filmInfo, filmInfo1, filmInfo2]; 
-   var films = new MovieList(arrOfFillm);
+   //var filmOne = new window.Movie(filmInfo);
+   var arrOfFillm = window.ArrOfFilms; 
+   //var films = new MovieList(arrOfFillm);
+   var films = new window.MovieList(arrOfFillm);
     
 		//var tempArr = movieList.sortByGenre("Triller");
 		var rowFilmShowing = document.querySelector(".row.film-showing");
-		var movieListView = new MovieListView(films);
+		var movieListView = new window.MovieListView(films);
     movieListView.renderAll(rowFilmShowing);
     //movieListView.renderItemById("1", rowFilmShowing);
-
+    Window.InstansListView = movieListView;
+    window.films = films;
 	</script>
   </body>
 </html>
