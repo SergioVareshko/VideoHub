@@ -17,30 +17,42 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <h1> <align="center"> Detail page</h1> 
-    <div class="container-headerDetail"></div>
-    
-    <form action="http">
-
-      
-    </form>
     <button type="button" id="edit-btn" data-loading-text="Loading..." class="btn btn-primary">
-       Редактировать
-      </button>
+      Редактировать
+     </button>
+     <button type="button" id="delete-btn" data-loading-text="Loading..." class="btn btn-primary">
+      Удалить
+     </button>
+     <form id="form2" style="display: none;">
+      <p> <input type="text" name="id"> "Id of film"</p>
+      <p><input type="text" name="title"> "Title of film" </p>
+      <p><input type="number" required name="RunTime"> "RunTime" </p>
+      <p><input type="date" required name="OpeningDate"> "OpeningDate" </p>
+      <p><input type="text" required name="TitleAlt"> "TitleAlt" </p>
+      <p><input type="number" required name="GenreId"> "GenreId" </p>
+      <p><input type="text" required name="Actors"> "Actors" </p>
+      <p><input type="text" required name="Genred"> "Genred" </p>
+      
+      <input type="button" value="Send to Server" onclick="editObj(document.getElementById('form2'))">
+    </form>
+
+    <div class="container-headerDetail"></div>
       <script>
-          $('#edit-btn').click(function () {
+        /*  $('#edit-btn').click(function () {
             var btn = $(this)
             btn.button('loading')
             console.log('comedy');
             btn.button('reset')
-          });
+          });*/
       </script>
     <script src="models/MovieList.js"></script>
     <script src="models/Movie.js"></script>
     <script src="models/MovieView.js"></script>
     <script src="models/Data.js"></script>
     <script src="models/MovieDetailView.js"></script>
-    <script src = "models/MovieView.js"></script>  
+    <script src="models/MovieView.js"></script>  
     <script src="models/Detail.js"></script>
+    <script src="main.js"></script>
 
 
   </body>

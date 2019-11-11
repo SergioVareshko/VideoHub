@@ -1,4 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');*/
 * {
 	margin: 0;
 	padding: 0;
@@ -6,10 +5,6 @@
 html,
 body {
 	height: 100%;
-}
-body
-{
-	background-image: url("G:\\Itea\\VideoHub\\img\/flover.jpg") ;
 }
 .wrapper {
 	position: relative;
@@ -58,11 +53,6 @@ span
 	min-width: 100%;
 	color:rgb(58, 130, 148);
 }
-header
-{
-	background-image: url("G:\\Itea\\VideoHub\\img\/gradient-fon-grafika-fioletovyi-geometriia-abstraktsiia.jpg");
-	height: auto;
-}
 #main-logo
 {
 	position: relative;
@@ -82,7 +72,7 @@ header
 
 .main-links a 
 {
-	color:#fff;
+	color:rgb(58, 130, 148);
 	font-family: 'Roboto Mono', monospace;
 	font-size:25px;
 }
@@ -96,11 +86,11 @@ header
 }
 a:link
 {
-	color:#fff;
+	color:rgb(58, 130, 148);
 }
 a:visited
 {
-	color:#fff;
+	color:rgb(58, 130, 148);
 }
 footer
 {
@@ -121,15 +111,16 @@ footer
 {
   font-size:40px;
 }
+.detail-info
+{
+	display: inline-block;
+	margin:10px;
+}
 
 .footer-icon
 {
 	color:#fff;
 }
-
-
-
-
 .list {
     display: inline;
     position: relative;

@@ -26,74 +26,61 @@
               <div class="col-1">
                 <img src="img/Schedule.jpg" alt="" id = "main-logo">
               </div>
-              <div class="col-2 main-links"><a href="">Фильмы</a></div>
-              <div class="col-2 main-links"><a href="">Сериалы</a></div>
-              <div class="col-2 main-links"><a href="">Трейлеры</a></div>
-              <div class="col-2 main-links"><a href="">Кино</a></div>
               <div class="col-3 search">
                 <input type="text" onkeyup="filter()" id="myInput" placeholder="Search">		
               </div>
             </div>
         </header>
 
-    <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Library</a></li>
-        <li class="active">Data</li>
-      </ol>
-      <button type="button" id="comedy-btn" data-loading-text="Loading..." class="btn btn-primary">
-        Коммедии
+      <button type="button" id="create-btn"  class="btn btn-primary">
+        Создать
       </button>
-      <button type="button" id="mylt-btn" data-loading-text="Loading..." class="btn btn-primary">
-        Мультфильми
+      <button type="button" id="soratA-btn"  class="btn btn-primary">
+        Сортировать А-Я
       </button>
-      <script>
-        $('#comedy-btn').click(function () {
-          var btn = $(this)
-          btn.button('loading')
-          console.log('comedy');
-          btn.button('reset')
-        });
-    </script>
+      <button type="button" id="sortDate-btn"  class="btn btn-primary">
+        Сортировать по дате
+      </button>
+
+      <button type="button" id="triller-btn"  class="btn btn-primary">
+        Трилери
+      </button>
+      <button type="button" id="wearpoon-btn"  class="btn btn-primary">
+        Бойовики
+      </button>
+      <button type="button" id="comedy-btn"  class="btn btn-primary">
+        Комедии
+      </button>
+        <form id="form1" style="display: none;">
+          <p> <input type="text" required name="id"> "Id of film"</p>
+          <p><input type="text" required name="title"> "Title of film" </p>
+          <p><input type="number" required name="RunTime"> "RunTime" </p>
+          <p><input type="date" required name="OpeningDate"> "OpeningDate" </p>
+          <p><input type="text" required name="TitleAlt"> "TitleAlt" </p>
+          <p><input type="number" required name="GenreId"> "GenreId" </p>
+          <p><input type="text" required name="Actors"> "Actors" </p>
+          <p><input type="text" required name="Genred"> "Genred" </p>
+          <!--<p><input type="image" required name="srcImage"> "srcImage" </p>-->
+          <input type="button" value="Send to Server" onclick="disp(document.getElementById('form1'))">
+      </form>
+      
+<div class ="main">
 <div class="container film-showing">
   <div class="row">
-    <div class="col-1">
-    <h1>Обязательно к просмотру</h1>
-    </div>
   </div>
   <div class="row film-showing">
-    <!-- <div class="col-2 test">
-      <div class="film-container">
-      <img src="http://baskino.me/uploads/images/2015/981/flii329.jpg" alt="kobain-heck-montage">
-      <a href="#"><span class="film-name">Кобейн чёртов монтаж</span></a>
-      </div>
-    </div> -->
   </div>
-</div>      
+</div>
+</div> 
+      
           
-<script src="main.js"></script>
+
 <script src="Movi.js"></script>
 <script src="models/Movie.js"></script>
 	<script src="models/MovieList.js"></script>
 	<script src="models/MovieView.js"></script>
   <script src="models/MovieListView.js"></script>
   <script src="models/Data.js"></script>
-	<script>
-
-
-
-   //var filmOne = new window.Movie(filmInfo);
-   var arrOfFillm = window.ArrOfFilms; 
-   //var films = new MovieList(arrOfFillm);
-   var films = new window.MovieList(arrOfFillm);
-    
-		//var tempArr = movieList.sortByGenre("Triller");
-		var rowFilmShowing = document.querySelector(".row.film-showing");
-		var movieListView = new window.MovieListView(films);
-    movieListView.renderAll(rowFilmShowing);
-    //movieListView.renderItemById("1", rowFilmShowing);
-    Window.InstansListView = movieListView;
-    window.films = films;
-	</script>
+  <script src="main.js"></script>
   </body>
 </html>

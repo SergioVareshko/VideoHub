@@ -6,42 +6,51 @@ MovieView.prototype = {
         if(element==null)
         return;
     if(element.children.length!=6){
-        console.log(element.children.length);
-    var bootsTrapCol = document.createElement("div");
-    bootsTrapCol.classList.add("col-2");
+    var mainCol = document.createElement("div");
+    mainCol.classList.add("col-2");
     var div = document.createElement("div");
     div.classList.add("film-container")
     var img = document.createElement("img");
-    img.setAttribute("src","img/"+ movie.getId()+".jpg");
-    img.setAttribute("href", "G:/Itea/VideoHub/DetailPage.html");
+    img.setAttribute("src", "https://oskar.kyiv.ua/storage/movies/API/" + movie.getId() + ".jpg");
     var a = document.createElement("a");
-    a.setAttribute("href",`G:/Itea/VideoHub/DetailPage.html?id=${movie.getId()}`);
+    var pathArr = location.pathname.split('/');
+    var pathstr;
+    for  (var i =0; i < pathArr.length; i++){
+        if (i == 1) {
+            pathstr =  pathArr[i] + '/';  
+        } else 
+        if (i ==  pathArr.length-1) {
+            pathstr = pathstr +  `DetailPage.html?id=${movie.getId()}`;
+        } 
+        else {
+            pathstr = pathstr + pathArr[i] + '/'
+        }
+    }
+    
+    a.setAttribute("href", pathstr);
     var span = document.createElement("span");
     span.textContent=movie.getName();
     span.classList.add("film-name");
     a.append(span);
     div.appendChild(img);
     div.appendChild(a);
-    bootsTrapCol.appendChild(div);
-    element.append(bootsTrapCol);
+    mainCol.appendChild(div);
+    element.append(mainCol);
 
-    }else{
+    } else{
 
         var el = element.nextElementSibling
-        if((el)!=null)
+        if ((el) != null)
         {
-            console.log("Тут");
             this.render(movie,el);
-        }else
-        {
-            var newRow = document.createElement("div");
-        newRow.classList.add("row");
-        newRow.classList.add("film-showing");
-        var filmContainer =  document.querySelector(".container.film-showing").append(newRow);
-        this.render(movie,newRow);
+        } else {
+                var newRow = document.createElement("div");
+                newRow.classList.add("row");
+                newRow.classList.add("film-showing");
+                var filmContainer = document.querySelector(".container.film-showing").append(newRow);
+                this.render(movie, newRow);
+            }
         }
-        
-    }
 
     }
 }

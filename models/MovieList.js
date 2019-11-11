@@ -21,40 +21,52 @@
             
         },
         getAll: function(sucsessfn, onfailfn) {
-            var http = XMLHttpRequest();
+            var http =new  XMLHttpRequest();
             http.open( 'GET', 'http://localhost:3000/films');
+            http.setRequestHeader("Content-Type", "application/json");
             http.send();
-            http.addEventListener('load', function(){
-            //
-             OnSucsess(JSON.parse(http.response).list);   
+            http.addEventListener('load', function() {
+                sucsessfn(JSON.parse(http.response).list);   
             })
         },
         
         getItemsByGanre :  function(ganreId) {
-            let movies = this.movies.filter(item => item.genreId === ganreId) ;
+            let movies = this.movies.filter(item => item.GenreId === ganreId) ;
+            this.movieList = movies;
             return movies;
         },
-    
-        deleteItemById : function (Id) {
-            let deleteitem = this.findItemById(Id);
-            let newarr = this.movies.filter(item => item != deleteitem);
-            return newarr;
+
+      
+        deleteItemById : function (data, sucsessfn) {
+            var http = new XMLHttpRequest();
+            http.open( 'DELETE', 'http://localhost:3000/films');
+            http.setRequestHeader("Content-Type", "application/json");
+            http.send(JSON.stringify(data));
+            http.addEventListener('load', function() {
+        
+                sucsessfn.call(http.response);   
+            })
         },
     
-        editItems : function (Id, data){
-            let item = this.findItemById(Id);
-            if (item) {
-                for (var prop in data)  {
-                    item[prop] = data[prop]
-                }
-            }
-            return item;
+        editItems : function (data, sucsessfn){
+            var http = new XMLHttpRequest();
+            http.open( 'PUT', 'http://localhost:3000/films');
+            http.setRequestHeader("Content-Type", "application/json");
+            http.send(JSON.stringify(data));
+            http.addEventListener('load', function() {
+                sucsessfn.call(http.response);   
+            })
+    
         },
     
-        addItem : function(data) {
-            let newItem = new Movie(data);
-            this.movies.push(newItem);
-            return this.movies;
+        addItem : function(data, sucsessfn) {
+            var http = new XMLHttpRequest();
+            http.open( 'POST', 'http://localhost:3000/films');
+            http.setRequestHeader("Content-Type", "application/json");
+            http.send(JSON.stringify(data));
+            http.addEventListener('load', function() {
+                sucsessfn(JSON.parse(http.response));   
+            })
         }
     }
     window.MovieList = MovieList;    
